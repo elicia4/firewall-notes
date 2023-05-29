@@ -1,7 +1,7 @@
 Notes on this video: https://youtu.be/XtRXm4FFK7Q
 #################################################
 
-keep in mind not to enable the iptables service as long as you use ufw for managing it. 
+Keep in mind not to enable the iptables service as long as you use ufw for managing it. 
 
 Update everything before installing ufw:
 
