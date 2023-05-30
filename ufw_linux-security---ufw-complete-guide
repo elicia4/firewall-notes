@@ -78,5 +78,6 @@ they are dynamic, things are going to break because your addresses will change.
 To start and enable a service at the same time:
 
     sudo systemctl enable --now ufw 
+	sudo ufw enable
 
 continue from https://youtu.be/-CzvPjZ9hp8?t=909
