@@ -2,10 +2,10 @@ Notes on this video: https://youtu.be/-CzvPjZ9hp8
 #################################################
 
 UFW is a utility that is designed to simplify the setup and management of 
-firewall rules, more specifically iptables
-rules. UFW allows you to very easily and succinctly control you various firewall
-rules. The main tool UFW uses to do this is iptables. To get more context on 
-what it does and how it's used:
+firewall rules, more specifically iptables rules. UFW allows you to easily 
+and succinctly control you various firewall rules. The main tool UFW uses 
+to do this is iptables. To get more context on what it does and how it's 
+used:
 
     man ufw 
 
