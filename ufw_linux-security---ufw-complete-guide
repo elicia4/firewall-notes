@@ -80,4 +80,57 @@ To start and enable a service at the same time:
     sudo systemctl enable --now ufw 
 	sudo ufw enable
 
-continue from https://youtu.be/-CzvPjZ9hp8?t=909
+After enabling the service, you can now list the rules you have configured:
+
+	sudo ufw status
+
+If you want to delete certain rules, you should list them with indexes:
+
+	sudo ufw status numbered
+
+And then delete the unnecessary rules:
+
+	sudo ufw delete <number>
+
+Better to delete rules with bigger rule indexes first, so that the order does
+not change each time you delete a rule. 
+
+All incoming connections are blocked by default (if you used the rules above),
+so if you don't explicitly allow access to some services (that is, their port
+numbers), you won't have access to them.
+
+Again, to allow a protocol use:
+
+	sudo ufw allow <protocol-name or protocol-number>
+
+To explicitly allow a particular IP address to a port:
+
+	sudo ufw allow from <IP> to any port <port-number>
+	
+For example, you can limit SSH to a particular IP:
+
+	sudo ufw allow from <IP> to any port 22
+
+To deny traffic, for example ftp:
+
+	sudo ufw deny ftp
+
+To deny access from IP address:
+
+	sudo ufw deny from <IP>
+
+Keep in mind what things you want to allow and what you want to deny.
+
+To reset UFW to get rid of all your rules:
+
+	sudo ufw reset
+
+If you reset your firewall, it will be turned off.
+
+A few things to make clear:
+
+	- Set up your default policies first 
+	- Then explicitly define what policies you want to allow AND deny
+	- and only then enable the firewall
+
+	DON'T FORGET ABOUT ENABLING SSH!!! :)
