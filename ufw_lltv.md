@@ -1,5 +1,6 @@
-Notes on this video: https://youtu.be/XtRXm4FFK7Q
-#################################################
+# UFW
+
+Notes on this video by LearnLinuxTV: https://youtu.be/XtRXm4FFK7Q
 
 Keep in mind not to enable the iptables service as long as you use ufw for 
 managing it. 
@@ -31,8 +32,8 @@ configured properly. You need to allow SSH in order to manage your firewall:
 
     ufw allow SSH
 
-UFW knows that ssh = port 22, that's why you can do that. If you have ssh on a 
-different port, make sure to configure thisdifferently. To check the status:
+UFW knows that ssh is port 22, that's why you can do that. If you have ssh on a 
+different port, make sure to configure this differently. To check the status:
 
     ufw status 
 
