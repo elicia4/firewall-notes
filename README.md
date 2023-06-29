@@ -1,2 +1,2 @@
-# linux-firewall
+# firewall notes
 Notes on ufw, iptables etc.
