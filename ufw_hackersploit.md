@@ -1,22 +1,23 @@
-Notes on this video: https://youtu.be/-CzvPjZ9hp8 
-#################################################
+# UFW 
 
-UFW is a utility that is designed to simplify the setup and management of 
-firewall rules, more specifically iptables rules. UFW allows you to easily 
-and succinctly control you various firewall rules. The main tool UFW uses 
-to do this is iptables. To get more context on what it does and how it's 
-used:
+These are notes on this video by HackerSploit:
+https://youtu.be/-CzvPjZ9hp8 
+
+UFW is a utility that is designed to simplify the setup and management of
+firewall rules, more specifically iptables rules. UFW allows you to easily and
+succinctly control you various firewall rules. The main tool UFW uses to do
+this is iptables. To get more context on what it does and how it's used:
 
     man ufw 
 
-UFW is a service. You can start them, stop them, restart them, enable them to 
-run on startup and so on. Make sure you DO NOT enable the service before you 
-configure your firewall because you can lose access to it. To view the status of
-your firewall:
+UFW is a service. You can start it, stop it, restart it, enable it to run on
+startup and so on. Make sure you DO NOT enable the service before you configure
+your firewall because you can lose access to it. To view the status of your
+firewall:
 
     sudo ufw status
 
-The default UFW configuration file is located in /etc/default/ufw . To disable
+The default UFW configuration file is located in /etc/default/ufw. To disable
 the service you can run:
 
     sudo ufw disable
@@ -32,15 +33,15 @@ Don't worry, by default the program will back everything up before resetting.
 You can get started by setting up the default policies. This is recommended for
 every new configuration. The default policies are as follows:
 
-    1) deny incoming connections 
-    2) allow outgoing connections
+- deny incoming connections 
+- allow outgoing connections
 
 The commands are:
 
     sudo ufw default deny incoming
     sudo ufw default allow outgoing
 
-If outgoing connections don't work, you can diable the service completely:
+If outgoing connections don't work, you can disable the service completely:
 
     sudo systemctl stop ufw 
 
@@ -94,7 +95,6 @@ And then delete the unnecessary rules:
 
 Better to delete rules with bigger rule indexes first, so that the order does
 not change each time you delete a rule. 
-
 All incoming connections are blocked by default (if you used the rules above),
 so if you don't explicitly allow access to some services (that is, their port
 numbers), you won't have access to them.
@@ -129,8 +129,8 @@ If you reset your firewall, it will be turned off.
 
 A few things to make clear:
 
-	- Set up your default policies first 
-	- Then explicitly define what policies you want to allow AND deny
-	- and only then enable the firewall
+- Set up your default policies first 
+- Then explicitly define what policies you want to allow AND deny
+- and only then enable the firewall
 
-	DON'T FORGET ABOUT ENABLING SSH!!! :)
+DON'T FORGET ABOUT ENABLING SSH!!! :)
