@@ -14,7 +14,7 @@ Things that will be discussed:
 - Rules 
 
 Netfilter is the firewall framework of Linux, `iptables` is a utility that is
-used to manage and control netfilter. iptables is not only responsible of
+used to manage and control `netfilter`. `iptables` is not only responsible of
 filtering traffic on a system, it also deals with such aspects of networking as
 NAT connections, the ability to modify packets, to act as a router and so on.
 It can be used to filter both incoming and outgoing packets, and also route
@@ -23,10 +23,14 @@ packets on a network (as a router would do).
 A table within `iptables` is a collection of chains that is responsible for
 handling a certain aspect of networking. Take a look at the following table:
 
-| FILTER TABLE | NAT TABLE | MANGLE TABLE | | :-------: | :-------: | :-------:
-| | INPUT CHAIN | OUTPUT CHAIN | INPUT CHAIN | | OUTPUT CHAIN | PREROUTING
-CHAIN | OUTPUT CHAIN | | FORWARD CHAIN | POSTROUTING CHAIN | FORWARD CHAIN | |
-| | FORWARD CHAIN | | | | PREROUTING CHAIN | | | | POSRTROUTING CHAIN |
+| FILTER TABLE | NAT TABLE | MANGLE TABLE |
+| :-------: | :-------: | :-------: |
+| INPUT CHAIN | OUTPUT CHAIN | INPUT CHAIN |
+| OUTPUT CHAIN | PREROUTING CHAIN | OUTPUT CHAIN |
+| FORWARD CHAIN | POSTROUTING CHAIN | FORWARD CHAIN |
+| | | FORWARD CHAIN |
+| | | PREROUTING CHAIN |
+| | | POSRTROUTING CHAIN |
 
 - The **FILTER TABLE** is responsible for filtering incoming and outgoing
   traffic. It deals with the firewall aspect. 
@@ -35,7 +39,7 @@ CHAIN | OUTPUT CHAIN | | FORWARD CHAIN | POSTROUTING CHAIN | FORWARD CHAIN | |
 - The **MANGLE TABLE** deals with modifying and changing various aspects of a
   packet or a connection.
 
-We're only going to focus on the "**FILTER TABLE"** because it is the one 
+We're only going to focus on the **FILTER TABLE** because it is the one 
 responsible for filtering connections.
 
 This table structure is how `iptables` deals with the complexity of networking,
