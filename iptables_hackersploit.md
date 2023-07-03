@@ -25,7 +25,7 @@ a network (as a router would do).
 A table within iptables is a collection of chains that is responsible for
 handling a certain aspect of networking. Imagine you have this table:
 
-*IPTABLES*
+| *IPTABLES* |
 | FILTER TABLE | NAT TABLE | MANGLE TABLE |
 | :-------: | :-------: | :-------: |
 | INPUT CHAIN | OUTPUT CHAIN | INPUT CHAIN |
